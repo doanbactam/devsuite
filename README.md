@@ -1,4 +1,4 @@
-![DevSuite](https://devsuite.co/_static/screenshot.webp)
+![DevSuite](https://devsuite.s3.us-east-1.amazonaws.com/screenshot.webp)
 
 <p align="center"></p>
 

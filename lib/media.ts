@@ -32,7 +32,10 @@ export const uploadToS3Storage = async (file: Buffer, key: string) => {
     throw new Error("Failed to upload")
   }
 
-  return result.Location
+  return result.Location.replace(
+    `s3.${env.S3_REGION}.amazonaws.com/${env.S3_BUCKET}`,
+    `${env.S3_BUCKET}.s3.${env.S3_REGION}.amazonaws.com`,
+  )
 }
 
 /**

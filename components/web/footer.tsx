@@ -1,4 +1,5 @@
 import { AtSignIcon, RssIcon } from "lucide-react"
+import Image from "next/image"
 import type { HTMLAttributes } from "react"
 import { H6 } from "~/components/common/heading"
 import { BrandGitHubIcon } from "~/components/common/icons/brand-github"
@@ -118,9 +119,9 @@ export const Footer = ({ children, className, ...props }: HTMLAttributes<HTMLEle
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <img
-            src="/_static/authors/piotrkulpinski.webp"
-            alt="Piotr Kulpinski"
+          <Image
+            src={`${config.media.staticHost}/authors/piotrkulpinski.webp`}
+            alt="Piotr Kulpinski avatar"
             loading="lazy"
             width="16"
             height="16"

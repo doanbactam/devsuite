@@ -6,14 +6,10 @@ import { usePathname } from "next/navigation"
 import { type HTMLAttributes, Suspense, useEffect, useState } from "react"
 import { Box } from "~/components/common/box"
 import { Logo } from "~/components/common/logo"
-import { Stack } from "~/components/common/stack"
 import { SearchForm } from "~/components/web/search-form"
-import { Badge } from "~/components/web/ui/badge"
 import { Button } from "~/components/web/ui/button"
 import { Container } from "~/components/web/ui/container"
 import { NavigationLink } from "~/components/web/ui/navigation-link"
-import { Ping } from "~/components/web/ui/ping"
-import { config } from "~/config"
 import { cx } from "~/utils/cva"
 
 export const Header = ({ className, ...props }: HTMLAttributes<HTMLElement>) => {
@@ -86,26 +82,7 @@ export const Header = ({ className, ...props }: HTMLAttributes<HTMLElement>) => 
             </svg>
           </button>
 
-          <Stack size="lg" className="mr-auto">
-            <Logo />
-
-            {true && (
-              <Badge
-                size="lg"
-                variant="outline"
-                prefix={
-                  <img src="/_static/producthunt.svg" alt="Product Hunt" className="opacity-75" />
-                }
-                className="relative font-medium text-foreground max-md:hidden"
-                asChild
-              >
-                <Link href={config.links.producthunt} target="_blank" rel="noreferrer nofollow">
-                  Live on ProductHunt
-                  <Ping className="size-2.5 text-green-600 absolute -top-1 -right-1" />
-                </Link>
-              </Badge>
-            )}
-          </Stack>
+          <Logo className="mr-auto" />
 
           <nav className="hidden lg:contents">
             <NavigationLink href="/tools">All Tools</NavigationLink>

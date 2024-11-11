@@ -17,7 +17,7 @@ export const CategorySkeleton = () => {
           </span>
         </div>
 
-        <span className="size-10 grid place-items-center mt-1 bg-foreground/10 rounded-full shrink-0">
+        <span className="size-9 grid place-items-center mt-1 bg-foreground/10 rounded-full shrink-0">
           <ArrowRightIcon />
         </span>
       </div>

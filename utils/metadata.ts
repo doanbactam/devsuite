@@ -18,7 +18,7 @@ export const parseMetadata = ({
       locale: "en_US",
       type: "website",
       // Remove this once we have a custom tool images
-      images: { url: "/_static/opengraph.png", width: 1200, height: 630 },
+      images: { url: `${config.media.staticHost}/opengraph.png`, width: 1200, height: 630 },
     },
     twitter: {
       site: "@devsuite",

@@ -25,7 +25,7 @@ export const CategoryCard = ({ category, ...props }: CategoryCardProps) => {
           </div>
 
           <span className="size-9 grid place-items-center mt-1 bg-foreground/10 rounded-full shrink-0">
-            <ArrowRightIcon className="size-4" />
+            <ArrowRightIcon />
           </span>
         </div>
 

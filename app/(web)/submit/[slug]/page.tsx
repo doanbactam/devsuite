@@ -1,5 +1,6 @@
 import type { Tool } from "@prisma/client"
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import type { SearchParams } from "nuqs"
@@ -108,7 +109,13 @@ export default async function SubmitPackages({ params, searchParams }: PageProps
       </Intro>
 
       {success ? (
-        <img src="/_static/3d-heart.webp" alt="" className="max-w-64 w-2/3 h-auto mx-auto" />
+        <Image
+          src={`${config.media.staticHost}/3d-heart.webp`}
+          alt=""
+          className="max-w-64 w-2/3 h-auto mx-auto"
+          width={256}
+          height={228}
+        />
       ) : (
         <div className="flex flex-wrap justify-center gap-5">
           <Suspense fallback={[...Array(3)].map((_, index) => <PlanSkeleton key={index} />)}>

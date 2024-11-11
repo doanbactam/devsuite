@@ -3,6 +3,7 @@ import type { HTMLAttributes } from "react"
 import { H3 } from "~/components/common/heading"
 import { NewsletterForm } from "~/components/web/newsletter-form"
 import { Card } from "~/components/web/ui/card"
+import { config } from "~/config"
 import { cx } from "~/utils/cva"
 
 type NewsletterProps = HTMLAttributes<HTMLElement> & {
@@ -29,7 +30,7 @@ export const Newsletter = ({ className, title, description, ...props }: Newslett
 
         <div className="absolute -inset-y-px -right-px w-1/2 rounded-lg overflow-clip select-none pointer-events-none max-md:hidden">
           <Image
-            src="/_static/3d-panels.webp"
+            src={`${config.media.staticHost}/3d-panels.webp`}
             alt="Newsletter"
             height={225}
             width={480}

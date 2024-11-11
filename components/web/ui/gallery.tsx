@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import type { HTMLAttributes } from "react"
 import {
@@ -40,7 +41,7 @@ export const Gallery = ({ images, ...props }: GalleryProps) => {
     }
 
     return (
-      <img
+      <Image
         key={pathname}
         src={typeof images[0] === "string" ? images[0] : images[0].url}
         alt={typeof images[0] === "string" ? "" : images[0].alt}
@@ -62,7 +63,7 @@ export const Gallery = ({ images, ...props }: GalleryProps) => {
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem className="basis-4/5 md:basis-[656px]" key={index}>
-              <img
+              <Image
                 src={typeof image === "string" ? image : image.url}
                 alt={typeof image === "string" ? "" : image.alt}
                 height={630}

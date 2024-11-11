@@ -5,7 +5,9 @@ const nextConfig: NextConfig = {
   pageExtensions: ["md", "mdx", "ts", "tsx"],
 
   images: {
-    remotePatterns: [{ hostname: "*.google.com" }, { hostname: "*.amazonaws.com" }],
+    remotePatterns: [
+      { hostname: `${process.env.S3_BUCKET}.s3.${process.env.S3_REGION}.amazonaws.com` },
+    ],
   },
 
   async rewrites() {
