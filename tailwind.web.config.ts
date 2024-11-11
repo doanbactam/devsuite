@@ -32,7 +32,7 @@ export default {
       },
 
       fontSize: {
-        "5xl": ["2.75rem", "1.05"],
+        // "5xl": ["2.75rem", "1.05"],
       },
 
       gridColumns: {

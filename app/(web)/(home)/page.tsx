@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Intro className="mb-[2.5vh] text-pretty">
-        <IntroTitle className="max-w-[44rem]">{config.site.tagline}</IntroTitle>
+        <IntroTitle className="max-w-[47rem]">{config.site.tagline}</IntroTitle>
         <IntroDescription>{config.site.description}</IntroDescription>
 
         <NewsletterForm
