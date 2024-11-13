@@ -31,10 +31,6 @@ export default {
         display: ["var(--font-uncut-sans)", ...fontFamily.sans],
       },
 
-      fontSize: {
-        // "5xl": ["2.75rem", "1.05"],
-      },
-
       gridColumns: {
         DEFAULT: "16rem",
         xxs: "10rem",

@@ -1,13 +1,10 @@
 "use client"
 
-import { getUrlHostname } from "@curiousleaf/utils"
-import PlausibleProvider from "next-plausible"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 import posthog from "posthog-js"
 import { PostHogProvider } from "posthog-js/react"
 import type { PropsWithChildren } from "react"
 import { PosthogPageview } from "~/components/web/posthog-pageview"
-import { config } from "~/config"
 import { env } from "~/env"
 
 if (typeof window !== "undefined") {
@@ -23,15 +20,6 @@ if (typeof window !== "undefined") {
 export default function Providers({ children }: PropsWithChildren) {
   return (
     <PostHogProvider client={posthog}>
-      <PlausibleProvider
-        domain={getUrlHostname(config.site.url)}
-        scriptProps={{
-          src: "/_proxy/plausible/script.js",
-          // @ts-ignore
-          "data-api": "/_proxy/plausible/event",
-        }}
-      />
-
       <PosthogPageview />
       <NuqsAdapter>{children}</NuqsAdapter>
     </PostHogProvider>

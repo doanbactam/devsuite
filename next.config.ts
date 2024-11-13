@@ -1,7 +1,9 @@
 import createMDX from "@next/mdx"
 import type { NextConfig } from "next"
+import { withPlausibleProxy } from "next-plausible"
 
 const nextConfig: NextConfig = {
+  skipTrailingSlashRedirect: true,
   pageExtensions: ["md", "mdx", "ts", "tsx"],
 
   images: {
@@ -11,27 +13,29 @@ const nextConfig: NextConfig = {
   },
 
   async rewrites() {
+    const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST
+
     return [
       // for posthog proxy
       {
         source: "/_proxy/posthog/ingest/static/:path*",
-        destination: `${process.env.NEXT_PUBLIC_POSTHOG_HOST?.replace("us", "us-assets")}/static/:path*`,
+        destination: `${posthogHost?.replace("us", "us-assets")}/static/:path*`,
       },
       {
         source: "/_proxy/posthog/ingest/:path*",
-        destination: `${process.env.NEXT_PUBLIC_POSTHOG_HOST}/:path*`,
-      },
-      // for plausible proxy
-      {
-        source: "/_proxy/plausible/script.js",
-        destination: `${process.env.NEXT_PUBLIC_PLAUSIBLE_HOST}/js/script.js`,
+        destination: `${posthogHost}/:path*`,
       },
       {
-        source: "/_proxy/plausible/event",
-        destination: `${process.env.NEXT_PUBLIC_PLAUSIBLE_HOST}/api/event`,
+        source: "/_proxy/posthog/ingest/decide",
+        destination: `${posthogHost}/decide`,
       },
     ]
   },
 }
 
-export default createMDX({})(nextConfig)
+const plausibleProxy = withPlausibleProxy({
+  customDomain: process.env.NEXT_PUBLIC_PLAUSIBLE_HOST,
+  subdirectory: "_proxy/plausible",
+})
+
+export default plausibleProxy(createMDX({})(nextConfig))
