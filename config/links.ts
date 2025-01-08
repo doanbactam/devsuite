@@ -2,24 +2,24 @@ import { env } from "~/env"
 
 export const linksConfig = {
   feed: `${env.NEXT_PUBLIC_SITE_URL}/rss.xml`,
-  author: "https://kulpinski.pl",
-  twitter: "https://x.com/devsuiteco",
-  github: "https://github.com/piotrkulpinski/devsuite",
-  producthunt: "https://www.producthunt.com/posts/devsuite",
+  author: "https://m4v.vn",
+  twitter: "https://x.com/",
+  github: "https://github.com/",
+  producthunt: "https://www.producthunt.com/",
   family: [
     {
-      title: "OpenAlternative",
-      href: "https://openalternative.co",
+      title: "Google",
+      href: "https://google.com",
       description: "Open Source Alternatives to Popular Software",
     },
     {
-      title: "Superstash",
-      href: "https://superstash.co",
+      title: "ChatGPT",
+      href: "https://chatgpt.com",
       description: "No-code directory website builder",
     },
     {
-      title: "Chipmunk Theme",
-      href: "https://chipmunktheme.com",
+      title: "Llama",
+      href: "https://llama.com",
       description: "Build directory websites in WordPress",
     },
   ],

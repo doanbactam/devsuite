@@ -119,7 +119,7 @@ export const Footer = ({ children, className, ...props }: HTMLAttributes<HTMLEle
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <Image
+          {/* <Image
             src={`${config.media.staticHost}/authors/piotrkulpinski.webp`}
             alt="Piotr Kulpinski avatar"
             loading="lazy"
@@ -127,8 +127,8 @@ export const Footer = ({ children, className, ...props }: HTMLAttributes<HTMLEle
             height="16"
             decoding="async"
             className="max-sm:hidden size-4 rounded-full"
-          />
-          Made by Piotr Kulpinski
+          /> */}
+          Made by Syr
         </NavigationLink>
 
         <p className="text-xs text-foreground/50">This website may contain affiliate links</p>

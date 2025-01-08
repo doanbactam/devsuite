@@ -5,10 +5,10 @@
 <p align="center">
   Find the Perfect Developer Tools for Your Next Project
   <br>
-  <a href="https://devsuite.co"><strong>Learn more »</strong></a>
+  <a href="https://m4v.vn"><strong>Learn more »</strong></a>
   <br />
   <br />
-  <a href="https://devsuite.co">Website</a>
+  <a href="https://m4v.vn">Website</a>
   ·
   <a href="https://github.com/piotrkulpinski/devsuite/issues">Issues</a>
 </p>

@@ -21,7 +21,7 @@ export const parseMetadata = ({
       images: { url: `${config.media.staticHost}/opengraph.png`, width: 1200, height: 630 },
     },
     twitter: {
-      site: "@devsuite",
+      site: "@m4v",
       creator: "@piotrkulpinski",
     },
     alternates: {
